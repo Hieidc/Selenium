@@ -39,13 +39,22 @@ def iniciar_driver():
 driver = iniciar_driver()
 driver.get('https://cursoautomacao.netlify.app')
 
-botao = driver.find_element(By.ID,'buttonalerta')
-botoes = driver.find_elements(By.ID,'buttonalerta')
+# tag(section,div,h4,button)
+# class(.btn)
+# combinação de class(.btn.btn-success)
+# Id (#dropDownMenuButton)
 
-if botao is not None:
-    print('Botão foi encontrado')
-if botoes is not None:
-    print('Botões encontrados')
+# Para encontrar valores exatos
+# input[class='form-check-input']
+# Inicia com algum valor
+# input[class^='form']
+# finaliza com algum valor
+# input[class$='input']
+# Contem algum valor
+# input[class*='check']
+
+elemento_h2 = driver.find_element(By.CSS_SELECTOR,'h2')
+elementos_form_chec = driver.find_element(By.CSS_SELECTOR,'input[class="form-check-input"]')
 
 input('')
 driver.close()

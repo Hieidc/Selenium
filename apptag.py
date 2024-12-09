@@ -39,13 +39,14 @@ def iniciar_driver():
 driver = iniciar_driver()
 driver.get('https://cursoautomacao.netlify.app')
 
-botao = driver.find_element(By.ID,'buttonalerta')
-botoes = driver.find_elements(By.ID,'buttonalerta')
+#Procurar por texto
+titulo_do_site = driver.find_element(By.TAG_NAME,'h1')
+titulos_h4 = driver.find_elements(By.TAG_NAME,'h4')
 
-if botao is not None:
-    print('Botão foi encontrado')
-if botoes is not None:
-    print('Botões encontrados')
+if titulo_do_site is not None:
+    print('Encontrado o texto')
+if titulos_h4 is not None:
+    print('Encontrado os titulos h4')
 
 input('')
 driver.close()

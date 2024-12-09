@@ -39,13 +39,14 @@ def iniciar_driver():
 driver = iniciar_driver()
 driver.get('https://cursoautomacao.netlify.app')
 
-botao = driver.find_element(By.ID,'buttonalerta')
-botoes = driver.find_elements(By.ID,'buttonalerta')
+#Procurar por texto
+titulo = driver.find_element(By.XPATH,'//*[text()="ZONA DE TESTES"]')
 
-if botao is not None:
-    print('Botão foi encontrado')
-if botoes is not None:
-    print('Botões encontrados')
+#if titulo is not None:
+#    print(titulo.text)
+    
+if titulo:
+    print(titulo.text)
 
 input('')
 driver.close()

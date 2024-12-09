@@ -39,13 +39,13 @@ def iniciar_driver():
 driver = iniciar_driver()
 driver.get('https://cursoautomacao.netlify.app')
 
-botao = driver.find_element(By.ID,'buttonalerta')
-botoes = driver.find_elements(By.ID,'buttonalerta')
+nome = driver.find_element(By.NAME,'seu-nome')
+radio_button = driver.find_elements(By.NAME,'exempleRadios')
 
-if botao is not None:
-    print('Botão foi encontrado')
-if botoes is not None:
-    print('Botões encontrados')
+if nome is not None:
+    print('Campo nome encontrado')
+if radio_button is not None:
+    print('Encontramos radio-buttons')
 
 input('')
 driver.close()

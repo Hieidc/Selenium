@@ -39,13 +39,13 @@ def iniciar_driver():
 driver = iniciar_driver()
 driver.get('https://cursoautomacao.netlify.app')
 
-botao = driver.find_element(By.ID,'buttonalerta')
-botoes = driver.find_elements(By.ID,'buttonalerta')
+logo = driver.find_element(By.CLASS_NAME,'navbar-brand')
+links_menu = driver.find_elements(By.NAME,'nav-link')
 
-if botao is not None:
-    print('Botão foi encontrado')
-if botoes is not None:
-    print('Botões encontrados')
+if logo is not None:
+    print('Encontrado a logo')
+if links_menu is not None:
+    print('Encontrados os links do menu')
 
 input('')
 driver.close()
